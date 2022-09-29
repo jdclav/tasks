@@ -100,7 +100,6 @@ export function sumPublishedPoints(questions: Question[]): number {
     );
 
     return total;
-    return 0;
 }
 
 /***
