@@ -22,11 +22,11 @@ export function ChooseTeam(): JSX.Element {
 
     function clearTeam() {
         setTeam([]);
+        setAllOptions(PEOPLE);
     }
-
     return (
         <div>
-            <h3>Choose Team</h3>
+            <span>Choose Team</span>
             <Row>
                 <Col>
                     {allOptions.map((option: string) => (
