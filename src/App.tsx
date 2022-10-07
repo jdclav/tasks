@@ -58,7 +58,7 @@ function App(): JSX.Element {
                 will automatically reload. Justin Clavette
             </p>
             <hr></hr>
-            {/* <DoubleHalf></DoubleHalf> */}
+            <DoubleHalf></DoubleHalf>
             <hr></hr>
             <ChooseTeam></ChooseTeam>
             <hr></hr>
