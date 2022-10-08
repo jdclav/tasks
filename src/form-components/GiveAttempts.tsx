@@ -15,7 +15,7 @@ export function GiveAttempts(): JSX.Element {
         <div>
             <div>Give Attempts</div>
             {attempts}
-            <Form.Group controlId="formShortAnswer">
+            <Form.Group controlId="formGiveAttempt">
                 <Form.Label>Request:</Form.Label>
                 <Form.Control
                     type="number"
