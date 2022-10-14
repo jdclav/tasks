@@ -24,25 +24,27 @@ export function EditMode(): JSX.Element {
         setPerson({ status: event.target.checked, name: person.name });
     }
 
-    const notFunction = (state: boolean): string => (state ? " " : " not");
+    const studentFunction = (name: string, state: boolean): string => {
+        if (state) {
+            return name + " is a student";
+        } else {
+            return name + " is not a student";
+        }
+    };
 
     return (
         <div>
             <div>Edit Mode</div>
-            <Form.Group controlId="formEditMode">
+            <Form.Group controlId="formEditMode1">
                 <Form.Label>Edit Mode:</Form.Label>
                 <Form.Check
                     type="switch"
                     onChange={updateEdit}
                     checked={mode}
                 />
-                {mode && (
-                    <Form.Control
-                        name="student"
-                        type="text"
-                        onChange={updateName}
-                    />
-                )}
+                {mode && <Form.Control type="text" onChange={updateName} />}
+            </Form.Group>
+            <Form.Group controlId="formEditMode2">
                 {mode && (
                     <Form.Check
                         label="student"
@@ -52,14 +54,7 @@ export function EditMode(): JSX.Element {
                     />
                 )}
             </Form.Group>
-            {!mode && (
-                <div>
-                    {person.name +
-                        " is" +
-                        notFunction(person.status) +
-                        " a student"}
-                </div>
-            )}
+            {<span>{studentFunction(person.name, person.status)}</span>}
         </div>
     );
 }
