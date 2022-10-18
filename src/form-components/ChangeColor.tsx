@@ -16,11 +16,12 @@ export function ChangeColor(): JSX.Element {
     ];
     function updateColor(event: React.ChangeEvent<HTMLInputElement>) {
         setColor(COLOR_LIST.indexOf(event.target.value));
+        console.log(color);
+        const text = document.getElementById("colored-box");
+        if (text !== null) {
+            text.style.background = event.target.value;
+        }
     }
-    function onUpdate()
-        style.background = COLOR_LIST[color
-    }
-
     return (
         <div>
             <div>Change Color</div>
